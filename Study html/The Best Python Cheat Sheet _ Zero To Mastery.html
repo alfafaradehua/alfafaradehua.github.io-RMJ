@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Cheatsheet</title>
+</head>
+<body><h2><a id="contents" >CONTENTS</a></h2>
+
+<h3>Python Types:</h3>
+
+<p><strong ><a href="#numbers" >Numbers</a></strong>, <strong ><a href="#strings" >Strings</a></strong>, <strong ><a href="#boolean" >Boolean</a></strong>, <strong ><a href="#lists" >Lists</a></strong>, <strong ><a href="#dictionaries" >Dictionaries</a></strong>, <strong ><a href="#tuples" >Tuples</a></strong>, <strong ><a href="#sets" >Sets</a></strong>, <strong ><a href="#none" >None</a></strong></p>
+
+<h3>Python Basics:</h3>
+
+<p><strong ><a href="#comparison-operators" >Comparison Operators</a></strong>, <strong ><a href="#cogical-operators" >Logical Operators</a></strong>, <strong ><a href="#loops" >Loops</a></strong>, <strong ><a href="#range" >Range</a></strong>, <strong ><a href="#enumerate" >Enumerate</a></strong>, <strong ><a href="#counter" >Counter</a></strong>, <strong ><a href="#named-tuple" >Named Tuple</a></strong>, <strong ><a href="#ordereddict" >OrderedDict</a></strong></p>
+
+<h3>Functions:</h3>
+
+<p><strong ><a href="#functions" >Functions</a></strong>, <strong ><a href="#lambda" >Lambda</a></strong>, <strong ><a href="#comprehensions" >Comprehensions</a></strong>, <strong ><a href="#map-filter-reduce" >Map,Filter,Reduce</a></strong>, <strong ><a href="#ternary-condition" >Ternary</a></strong>, <strong ><a href="#any-all" >Any,All</a></strong>, <strong ><a href="#closures" >Closures</a></strong>, <strong ><a href="#scope" >Scope</a></strong></p>
+
+<h3>Advanced Python:</h3>
+
+<p><strong ><a href="#modules" >Modules</a></strong>, <strong ><a href="#iterators" >Iterators</a></strong>, <strong ><a href="#generators" >Generators</a></strong>, <strong ><a href="#decorators" >Decorators</a></strong>, <strong ><a href="#class" >Class</a></strong>, <strong ><a href="#exceptions" >Exceptions</a></strong>, <strong ><a href="#command-line-arguments" >Command Line Arguments</a></strong>, <strong ><a href="#file-io" >File IO</a></strong>, <strong ><a href="#useful-libraries" >Useful Libraries</a></strong></p>
+
+<h2><a id="numbers" >NUMBERS</a></h2>
+
+<p><strong >Python's 2 main types for Numbers is int and float (or integers and floating point numbers)</strong></p>
+
+<pre  ><code  >type(1) # int  type(-10) # int type(0) # int type(0.0) # float type(2.2) # float type(4E2) # float - 4*10 to the power of 2</code></pre><pre  ><code  ># Arithmetic 10 + 3 # 13 10 - 3 # 7 10 * 3 # 30 10 ** 3 # 1000 10 / 3 # 3.3333333333333335 10 // 3 # 3 --&amp;gt; floor division - no decimals and returns an int 10 % 3 # 1 --&amp;gt; modulo operator - return the reminder. Good for deciding if number is even or odd</code></pre><pre  ><code  ># Basic Functions pow(5, 2) # 25 --&amp;gt; like doing 5**2 abs(-50) # 50 round(5.46) # 5 round(5.468, 2)# 5.47 --&amp;gt; round to nth digit bin(512) # '0b1000000000' --&amp;gt; binary format hex(512) # '0x200' --&amp;gt; hexadecimal format</code></pre><pre  ><code  ># Converting Strings to Numbers age = input("How old are you?") age = int(age) pi = input("What is the value of pi?") pi = float(pi)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="strings" >STRINGS</a></h2>
+
+<p><strong >Strings in python are stored as sequences of letters in memory</strong></p>
+
+<pre  ><code  >type('Hellloooooo') # str 'I\'m thirsty' "I'm thirsty" "\n" # new line "\t" # adds a tab 'Hey you!'[4] # y name = 'Andrei Neagoie' name[4] # e name[:] # Andrei Neagoie name[1:] # ndrei Neagoie name[:1] # A name[-1] # e name[::1] # Andrei Neagoie name[::-1] # eiogaeN ierdnA name[0:10:2]# Ade e # : is called slicing and has the format [ start : end : step ] 'Hi there ' + 'Timmy' # 'Hi there Timmy' --&amp;gt; This is called string concatenation '*'*10 # **********</code></pre><pre  ><code  ># Basic Functions len('turtle') # 6 # Basic Methods ' I am alone '.strip() # 'I am alone' --&amp;gt; Strips all whitespace characters from both ends. 'On an island'.strip('d') # 'On an islan' --&amp;gt; # Strips all passed characters from both ends. 'but life is good!'.split() # ['but', 'life', 'is', 'good!'] 'Help me'.replace('me', 'you') # 'Help you' --&amp;gt; Replaces first with second param 'Need to make fire'.startswith('Need')# True 'and cook rice'.endswith('rice') # True 'bye bye'.index('e') # 2 'still there?'.upper() # STILL THERE? 'HELLO?!'.lower() # hello?! 'ok, I am done.'.capitalize() # 'Ok, I am done.' 'oh hi there'.find('i') # 4 --&amp;gt; returns the starting index position of the first occurrence 'oh hi there'.count('e') # 2 </code></pre><pre  ><code  ># String Formatting name1 = 'Andrei' name2 = 'Sunny' print(f'Hello there {name1} and {name2}') # Hello there Andrei and Sunny - Newer way to do things as of python 3.6 print('Hello there {} and {}'.format(name1, name2))# Hello there Andrei and Sunny print('Hello there %s and %s' %(name1, name2)) # Hello there Andrei and Sunny --&amp;gt; you can also use %d, %f, %r for integers, floats, string representations of objects respectively</code></pre><pre  ><code  >#Palindrome check word = 'reviver' p = bool(word.find(word[::-1]) + 1) print(p) # True</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="boolean" >BOOLEAN</a></h2>
+
+<p><strong >True or False. Used in a lot of comparison and logical operations in Python</strong></p>
+
+<pre  ><code  >bool(True) bool(False) # all of the below evaluate to False. Everything else will evaluate to True in Python. print(bool(None)) print(bool(False)) print(bool(0)) print(bool(0.0)) print(bool([])) print(bool({})) print(bool(())) print(bool('')) print(bool(range(0))) print(bool(set())) # See Logical Operators and Comparison Operators section for more on booleans.</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="lists" >LISTS</a></h2>
+
+<p><strong >Unlike strings, lists are mutable sequences in python</strong></p>
+
+<pre  ><code  >my_list = [1, 2, '3', True]# We assume this list won't mutate for each example below len(my_list) # 4 my_list.index('3') # 2 my_list.count(2) # 1 --&amp;gt; count how many times 2 appears my_list[3] # True my_list[1:] # [2, '3', True] my_list[:1] # [1] my_list[-1] # True my_list[::1] # [1, 2, '3', True] my_list[::-1] # [True, '3', 2, 1] my_list[0:3:2] # [1, '3'] # : is called slicing and has the format [ start : end : step ]</code></pre><pre  ><code  ># Add to List my_list * 2 # [1, 2, '3', True, 1, 2, '3', True] my_list + [100] # [1, 2, '3', True, 100] --&amp;gt; doesn't mutate original list, creates new one my_list.append(100) # None --&amp;gt; Mutates original list to [1, 2, '3', True, 100] # Or: &amp;lt;list&amp;gt; += [&amp;lt;el&amp;gt;] my_list.extend([100, 200]) # None --&amp;gt; Mutates original list to [1, 2, '3', True, 100, 200] my_list.insert(2, '!!!') # None --&amp;gt; [1, 2, '!!!', '3', True] - Inserts item at index and moves the rest to the right. ' '.join(['Hello','There'])# 'Hello There' --&amp;gt; Joins elements using string as separator.</code></pre><pre  ><code  ># Copy a List basket = ['apples', 'pears', 'oranges'] new_basket = basket.copy() new_basket2 = basket[:]</code></pre><pre  ><code  ># Remove from List [1,2,3].pop() # 3 --&amp;gt; mutates original list, default index in the pop method is -1 (the last item) [1,2,3].pop(1) # 2 --&amp;gt; mutates original list [1,2,3].remove(2)# None --&amp;gt; [1,3] Removes first occurrence of item or raises ValueError. [1,2,3].clear() # None --&amp;gt; mutates original list and removes all items: [] del [1,2,3][0] # </code></pre><pre  ><code  ># Ordering [1,2,5,3].sort() # None --&amp;gt; Mutates list to [1, 2, 3, 5] [1,2,5,3].sort(reverse=True) # None --&amp;gt; Mutates list to [5, 3, 2, 1] [1,2,5,3].reverse() # None --&amp;gt; Mutates list to [3, 5, 2, 1] sorted([1,2,5,3]) # [1, 2, 3, 5] --&amp;gt; new list created list(reversed([1,2,5,3]))# [3, 5, 2, 1] --&amp;gt; reversed() returns an iterator</code></pre><pre  ><code  ># Useful operations 1 in [1,2,5,3] # True min([1,2,3,4,5])# 1 max([1,2,3,4,5])# 5 sum([1,2,3,4,5])# 15</code></pre><pre  ><code  ># Get First and Last element of a list mList = [63, 21, 30, 14, 35, 26, 77, 18, 49, 10] first, *x, last = mList print(first) #63 print(last) #10</code></pre><pre  ><code  ># Matrix matrix = [[1,2,3], [4,5,6], [7,8,9]] matrix[2][0] # 7 --&amp;gt; Grab first first of the third item in the matrix object # Looping through a matrix by rows: mx = [[1,2,3],[4,5,6]] for row in range(len(mx)): for col in range(len(mx[0])): print(mx[row][col]) # 1 2 3 4 5 6 # Transform into a list: [mx[row][col] for row in range(len(mx)) for col in range(len(mx[0]))] # [1,2,3,4,5,6] # Combine columns with zip and *: [x for x in zip(*mx)] # [(1, 3), (2, 4)] </code></pre><pre  ><code  ># List Comprehensions # new_list[&amp;lt;action&amp;gt; for &amp;lt;item&amp;gt; in &amp;lt;iterator&amp;gt; if &amp;lt;some condition&amp;gt;] a = [i for i in 'hello'] # ['h', 'e', 'l', 'l', '0'] b = [i*2 for i in [1,2,3]] # [2, 4, 6] c = [i for i in range(0,10) if i % 2 == 0]# [0, 2, 4, 6, 8]</code></pre><pre  ><code  ># Advanced Functions list_of_chars = list('Helloooo') # ['H', 'e', 'l', 'l', 'o', 'o', 'o', 'o'] sum_of_elements = sum([1,2,3,4,5]) # 15 element_sum = [sum(pair) for pair in zip([1,2,3],[4,5,6])] # [5, 7, 9] sorted_by_second = sorted(['hi','you','man'], key=lambda el: el[1])# ['man', 'hi', 'you'] sorted_by_key = sorted([ {'name': 'Bina', 'age': 30}, {'name':'Andy', 'age': 18}, {'name': 'Zoey', 'age': 55}], key=lambda el: (el['name']))# [{'name': 'Andy', 'age': 18}, {'name': 'Bina', 'age': 30}, {'name': 'Zoey', 'age': 55}]</code></pre><pre  ><code  ># Read line of a file into a list with open("myfile.txt") as f: lines = [line.strip() for line in f]</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="dictionaries" >DICTIONARIES</a></h2>
+
+<p><strong >Also known as mappings or hash tables. They are key value pairs that are guaranteed to retain order of insertion starting from Python 3.7</strong></p>
+
+<pre  ><code  >my_dict = {'name': 'Andrei Neagoie', 'age': 30, 'magic_power': False} my_dict['name'] # Andrei Neagoie len(my_dict) # 3 list(my_dict.keys()) # ['name', 'age', 'magic_power'] list(my_dict.values()) # ['Andrei Neagoie', 30, False] list(my_dict.items()) # [('name', 'Andrei Neagoie'), ('age', 30), ('magic_power', False)] my_dict['favourite_snack'] = 'Grapes'# {'name': 'Andrei Neagoie', 'age': 30, 'magic_power': False, 'favourite_snack': 'Grapes'} my_dict.get('age') # 30 --&amp;gt; Returns None if key does not exist. my_dict.get('ages', 0 ) # 0 --&amp;gt; Returns default (2nd param) if key is not found #Remove key del my_dict['name'] my_dict.pop('name', None)</code></pre><pre  ><code  >my_dict.update({'cool': True}) # {'name': 'Andrei Neagoie', 'age': 30, 'magic_power': False, 'favourite_snack': 'Grapes', 'cool': True} {**my_dict, **{'cool': True} } # {'name': 'Andrei Neagoie', 'age': 30, 'magic_power': False, 'favourite_snack': 'Grapes', 'cool': True} new_dict = dict([['name','Andrei'],['age',32],['magic_power',False]]) # Creates a dict from collection of key-value pairs. new_dict = dict(zip(['name','age','magic_power'],['Andrei',32, False]))# Creates a dict from two collections. new_dict = my_dict.pop('favourite_snack') # Removes item from dictionary.</code></pre><pre  ><code  ># Dictionary Comprehension {key: value for key, value in new_dict.items() if key == 'age' or key == 'name'} # {'name': 'Andrei', 'age': 32} --&amp;gt; Filter dict by keys</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="tuples" >TUPLES</a></h2>
+
+<p><strong >Like lists, but they are used for immutable things (that don't change)</strong></p>
+
+<pre  ><code  >my_tuple = ('apple','grapes','mango', 'grapes') apple, grapes, mango, grapes = my_tuple# Tuple unpacking len(my_tuple) # 4 my_tuple[2] # mango my_tuple[-1] # 'grapes'</code></pre><pre  ><code  ># Immutability my_tuple[1] = 'donuts' # TypeError my_tuple.append('candy')# AttributeError</code></pre><pre  ><code  ># Methods my_tuple.index('grapes') # 1 my_tuple.count('grapes') # 2</code></pre><pre  ><code  ># Zip list(zip([1,2,3], [4,5,6])) # [(1, 4), (2, 5), (3, 6)]</code></pre><pre  ><code  ># unzip z = [(1, 2), (3, 4), (5, 6), (7, 8)] # Some output of zip() function unzip = lambda z: list(zip(*z)) unzip(z)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="sets" >SETS</a></h2>
+
+<p><strong >Unordered collection of unique elements.</strong></p>
+
+<pre  ><code  >my_set = set() my_set.add(1) # {1} my_set.add(100)# {1, 100} my_set.add(100)# {1, 100} --&amp;gt; no duplicates!</code></pre><pre  ><code  >new_list = [1,2,3,3,3,4,4,5,6,1] set(new_list) # {1, 2, 3, 4, 5, 6} my_set.remove(100) # {1} --&amp;gt; Raises KeyError if element not found my_set.discard(100) # {1} --&amp;gt; Doesn't raise an error if element not found my_set.clear() # {} new_set = {1,2,3}.copy()# {1,2,3}</code></pre><pre  ><code  >set1 = {1,2,3} set2 = {3,4,5} set3 = set1.union(set2) # {1,2,3,4,5} set4 = set1.intersection(set2) # {3} set5 = set1.difference(set2) # {1, 2} set6 = set1.symmetric_difference(set2)# {1, 2, 4, 5} set1.issubset(set2) # False set1.issuperset(set2) # False set1.isdisjoint(set2) # False --&amp;gt; return True if two sets have a null intersection. </code></pre><pre  ><code  ># Frozenset # hashable --&amp;gt; it can be used as a key in a dictionary or as an element in a set. &amp;lt;frozenset&amp;gt; = frozenset(&amp;lt;collection&amp;gt;)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="none" >NONE</a></h2>
+
+<p><strong >None is used for absence of a value and can be used to show nothing has been assigned to an object</strong></p>
+
+<pre  ><code  >type(None) # NoneType a = None</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="comparison-operators" >COMPARISON OPERATORS</a></h2>
+
+<pre  ><code  >== # equal values != # not equal &amp;gt; # left operand is greater than right operand &amp;lt; # left operand is less than right operand &amp;gt;= # left operand is greater than or equal to right operand &amp;lt;= # left operand is less than or equal to right operand &amp;lt;element&amp;gt; is &amp;lt;element&amp;gt; # check if two operands refer to same object in memory</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="logical-operators" >LOGICAL OPERATORS</a></h2>
+
+<pre  ><code  >1 &amp;lt; 2 and 4 &amp;gt; 1 # True 1 &amp;gt; 3 or 4 &amp;gt; 1 # True 1 is not 4 # True not True # False 1 not in [2,3,4]# True if &amp;lt;condition that evaluates to boolean&amp;gt;: # perform action1 elif &amp;lt;condition that evaluates to boolean&amp;gt;: # perform action2 else: # perform action3</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="loops" >LOOPS</a></h2>
+
+<pre  ><code  >my_list = [1,2,3] my_tuple = (1,2,3) my_list2 = [(1,2), (3,4), (5,6)] my_dict = {'a': 1, 'b': 2. 'c': 3} for num in my_list: print(num) # 1, 2, 3 for num in my_tuple: print(num) # 1, 2, 3 for num in my_list2: print(num) # (1,2), (3,4), (5,6) for num in '123': print(num) # 1, 2, 3 for k,v in my_dict.items(): # Dictionary Unpacking print(k) # 'a', 'b', 'c' print(v) # 1, 2, 3 while &amp;lt;condition that evaluates to boolean&amp;gt;: # action if &amp;lt;condition that evaluates to boolean&amp;gt;: break # break out of while loop if &amp;lt;condition that evaluates to boolean&amp;gt;: continue # continue to the next line in the block</code></pre><pre  ><code  ># waiting until user quits msg = '' while msg != 'quit': msg = input("What should I do?") print(msg)</code></pre><h2><a id="range" >RANGE</a></h2>
+
+<pre  ><code  >range(10) # range(0, 10) --&amp;gt; 0 to 9 range(1,10) # range(1, 10) list(range(0,10,2))# [0, 2, 4, 6, 8]</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="enumerate" >ENUMERATE</a></h2>
+
+<pre  ><code  >for i, el in enumerate('helloo'): print(f'{i}, {el}') # 0, h # 1, e # 2, l # 3, l # 4, o # 5, o</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="counter" >COUNTER</a></h2>
+
+<pre  ><code  >from collections import Counter colors = ['red', 'blue', 'yellow', 'blue', 'red', 'blue'] counter = Counter(colors)# Counter({'blue': 3, 'red': 2, 'yellow': 1}) counter.most_common()[0] # ('blue', 3)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="named-tuple" >NAMED TUPLE</a></h2>
+
+<ul>
+<li><strong >Tuple is an immutable and hashable list.</strong></li>
+<li><strong >Named tuple is its subclass with named elements.</strong></li>
+</ul>
+
+<pre  ><code  >from collections import namedtuple Point = namedtuple('Point', 'x y') p = Point(1, y=2)# Point(x=1, y=2) p[0] # 1 p.x # 1 getattr(p, 'y') # 2 p._fields # Or: Point._fields #('x', 'y')</code></pre><pre  ><code  >from collections import namedtuple Person = namedtuple('Person', 'name height') person = Person('Jean-Luc', 187) f'{person.height}' # '187' '{p.height}'.format(p=person)# '187'</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="ordereddict" >ORDEREDDICT</a></h2>
+
+<p><strong >Maintains order of insertion</strong></p>
+
+<pre  ><code  >from collections import OrderedDict # Store each person's languages, keeping # track of who responded first.  programmers = OrderedDict() programmers['Tim'] = ['python', 'javascript'] programmers['Sarah'] = ['C++'] programmers['Bia'] = ['Ruby', 'Python', 'Go'] for name, langs in programmers.items(): print(name + '--&amp;gt;') for lang in langs: print('\t' + lang)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="functions" >FUNCTIONS</a></h2>
+
+<p><strong >*args and **kwargs</strong></p>
+
+<p><strong >Splat (*) expands a collection into positional arguments, while splatty-splat (**) expands a dictionary into keyword arguments.</strong></p>
+
+<pre  ><code  >args = (1, 2) kwargs = {'x': 3, 'y': 4, 'z': 5} some_func(*args, **kwargs) # same as some_func(1, 2, x=3, y=4, z=5)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h4>* Inside Function Definition</h4>
+
+<p><strong >Splat combines zero or more positional arguments into a tuple, while splatty-splat combines zero or more keyword arguments into a dictionary.</strong></p>
+
+<pre  ><code  >def add(*a): return sum(a) add(1, 2, 3) # 6</code></pre><h5>Ordering of parameters:</h5>
+
+<pre  ><code  >def f(*args): # f(1, 2, 3) def f(x, *args): # f(1, 2, 3) def f(*args, z): # f(1, 2, z=3) def f(x, *args, z): # f(1, 2, z=3) def f(**kwargs): # f(x=1, y=2, z=3) def f(x, **kwargs): # f(x=1, y=2, z=3) | f(1, y=2, z=3) def f(*args, **kwargs): # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3) | f(1, 2, 3) def f(x, *args, **kwargs): # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3) | f(1, 2, 3) def f(*args, y, **kwargs): # f(x=1, y=2, z=3) | f(1, y=2, z=3) def f(x, *args, z, **kwargs): # f(x=1, y=2, z=3) | f(1, y=2, z=3) | f(1, 2, z=3)</code></pre><h4>Other Uses of *</h4>
+
+<pre  ><code  >[*[1,2,3], *[4]] # [1, 2, 3, 4] {*[1,2,3], *[4]} # {1, 2, 3, 4} (*[1,2,3], *[4]) # (1, 2, 3, 4) {**{'a': 1, 'b': 2}, **{'c': 3}}# {'a': 1, 'b': 2, 'c': 3}</code></pre><pre  ><code  >head, *body, tail = [1,2,3,4,5]</code></pre><h2><a id="lambda" >LAMBDA</a></h2>
+
+<pre  ><code  ># lambda: &amp;lt;return_value&amp;gt; # lambda &amp;lt;argument1&amp;gt;, &amp;lt;argument2&amp;gt;: &amp;lt;return_value&amp;gt;</code></pre><pre  ><code  ># Factorial from functools import reduce n = 3 factorial = reduce(lambda x, y: x*y, range(1, n+1)) print(factorial) #6</code></pre><pre  ><code  ># Fibonacci fib = lambda n : n if n &amp;lt;= 1 else fib(n-1) + fib(n-2) result = fib(10) print(result) #55</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="comprehensions" >COMPREHENSIONS</a></h2>
+
+<pre  ><code  >&amp;lt;list&amp;gt; = [i+1 for i in range(10)] # [1, 2, ..., 10] &amp;lt;set&amp;gt; = {i for i in range(10) if i &amp;gt; 5} # {6, 7, 8, 9} &amp;lt;iter&amp;gt; = (i+5 for i in range(10)) # (5, 6, ..., 14) &amp;lt;dict&amp;gt; = {i: i*2 for i in range(10)} # {0: 0, 1: 2, ..., 9: 18}</code></pre><pre  ><code  >output = [i+j for i in range(3) for j in range(3)] # [0, 1, 2, 1, 2, 3, 2, 3, 4] # Is the same as: output = [] for i in range(3): for j in range(3): output.append(i+j)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="ternary-condition" >TERNARY CONDITION</a></h2>
+
+<pre  ><code  ># &amp;lt;expression_if_true&amp;gt; if &amp;lt;condition&amp;gt; else &amp;lt;expression_if_false&amp;gt; [a if a else 'zero' for a in [0, 1, 0, 3]] # ['zero', 1, 'zero', 3]</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="map-filter-reduce" >MAP FILTER REDUCE</a></h2>
+
+<pre  ><code  >from functools import reduce list(map(lambda x: x + 1, range(10))) # [1, 2, 3, 4, 5, 6, 7, 8, 9,10] list(filter(lambda x: x &amp;gt; 5, range(10))) # (6, 7, 8, 9) reduce(lambda acc, x: acc + x, range(10)) # 45</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="any-all" >ANY ALL</a></h2>
+
+<pre  ><code  >any([False, True, False])# True if at least one item in collection is truthy, False if empty. all([True,1,3,True]) # True if all items in collection are true</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="closeures" >CLOSURES</a></h2>
+
+<p><strong >We have a closure in Python when:</strong></p>
+
+<ul>
+<li><strong >A nested function references a value of its enclosing function and then</strong></li>
+<li><strong >the enclosing function returns the nested function.</strong></li>
+</ul>
+
+<pre  ><code  >def get_multiplier(a): def out(b): return a * b return out</code></pre><pre  ><code  >&amp;gt;&amp;gt;&amp;gt; multiply_by_3 = get_multiplier(3) &amp;gt;&amp;gt;&amp;gt; multiply_by_3(10) 30</code></pre><ul>
+<li><strong >If multiple nested functions within enclosing function reference the same value, that value gets shared.</strong></li>
+<li><strong >To dynamically access function's first free variable use <code  >'&amp;lt;function&amp;gt;.__closure__[0].cell_contents'</code>.</strong></li>
+</ul>
+
+<p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="scope" >SCOPE</a></h2>
+
+<p><strong >If variable is being assigned to anywhere in the scope, it is regarded as a local variable, unless it is declared as a 'global' or a 'nonlocal'.</strong></p>
+
+<pre  ><code  >def get_counter(): i = 0 def out(): nonlocal i i += 1 return i return out</code></pre><pre  ><code  >&amp;gt;&amp;gt;&amp;gt; counter = get_counter() &amp;gt;&amp;gt;&amp;gt; counter(), counter(), counter() (1, 2, 3)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="modules" >MODULES</a></h2>
+
+<pre  ><code  >if __name__ == '__main__': # Runs main() if file wasn't imported. main()</code></pre><pre  ><code  >import &amp;lt;module_name&amp;gt; from &amp;lt;module_name&amp;gt; import &amp;lt;function_name&amp;gt; import &amp;lt;module_name&amp;gt; as m from &amp;lt;module_name&amp;gt; import &amp;lt;function_name&amp;gt; as m_function from &amp;lt;module_name&amp;gt; import *</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="iterators" >ITERATORS</a></h2>
+
+<p><strong >In this cheatsheet <code  >'&amp;lt;collection&amp;gt;'</code> can also mean an iterator.</strong></p>
+
+<pre  ><code  >&amp;lt;iter&amp;gt; = iter(&amp;lt;collection&amp;gt;) &amp;lt;iter&amp;gt; = iter(&amp;lt;function&amp;gt;, to_exclusive) # Sequence of return values until 'to_exclusive'. &amp;lt;el&amp;gt; = next(&amp;lt;iter&amp;gt; [, default]) # Raises StopIteration or returns 'default' on end.</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="generators" >GENERATORS</a></h2>
+
+<p><strong >Convenient way to implement the iterator protocol.</strong></p>
+
+<pre  ><code  >def count(start, step): while True: yield start start += step</code></pre><pre  ><code  >&amp;gt;&amp;gt;&amp;gt; counter = count(10, 2) &amp;gt;&amp;gt;&amp;gt; next(counter), next(counter), next(counter) (10, 12, 14)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="decorators" >DECORATORS</a></h2>
+
+<p><strong >A decorator takes a function, adds some functionality and returns it.</strong></p>
+
+<pre  ><code  >@decorator_name def function_that_gets_passed_to_decorator(): ...</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="debugger-examples" >DEBUGGER EXAMPLE</a></h2>
+
+<p><strong >Decorator that prints function's name every time it gets called.</strong></p>
+
+<pre  ><code  >from functools import wraps def debug(func): @wraps(func) def out(*args, **kwargs): print(func.__name__) return func(*args, **kwargs) return out @debug def add(x, y): return x + y</code></pre><ul>
+<li><strong >Wraps is a helper decorator that copies metadata of function add() to function out().</strong></li>
+<li><strong >Without it <code  >'add.__name__'</code> would return <code  >'out'</code>.</strong></li>
+</ul>
+
+<p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="class" >CLASS</a></h2>
+
+<p><strong >User defined objects are created using the class keyword</strong></p>
+
+<pre  ><code  >class &amp;lt;name&amp;gt;: age = 80 # Class Object Attribute def __init__(self, a): self.a = a # Object Attribute @classmethod def get_class_name(cls): return cls.__name__</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="inheritance" >INHERITANCE</a></h2>
+
+<pre  ><code  >class Person: def __init__(self, name, age): self.name = name self.age = age class Employee(Person): def __init__(self, name, age, staff_num): super().__init__(name, age) self.staff_num = staff_num</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="multiple-inheritance" >MULTIPLE INHERITANCE</a></h2>
+
+<pre  ><code  >class A: pass class B: pass class C(A, B): pass</code></pre><p><strong >MRO determines the order in which parent classes are traversed when searching for a method:</strong></p>
+
+<pre  ><code  >&amp;gt;&amp;gt;&amp;gt; C.mro() [&amp;lt;class 'C'&amp;gt;, &amp;lt;class 'A'&amp;gt;, &amp;lt;class 'B'&amp;gt;, &amp;lt;class 'object'&amp;gt;]</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="exceptions" >EXCEPTIONS</a></h2>
+
+<pre  ><code  >try: 5/0 except ZeroDivisionError: print("No division by zero!")</code></pre><pre  ><code  >while True: try: x = int(input('Enter your age: ')) except ValueError: print('Oops! That was no valid number. Try again...') else: # code that depends on the try block running successfully should be placed in the else block. print('Carry on!') break</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="raising-exception" >RAISING EXCEPTION</a></h2>
+
+<pre  ><code  >raise ValueError('some error message')</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="finally" >FINALLY</a></h2>
+
+<pre  ><code  >try: raise KeyboardInterrupt except: print('oops') finally: print('All done!') </code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="command-line-arguments" >COMMAND LINE ARGUMENTS</a></h2>
+
+<pre  ><code  >import sys script_name = sys.argv[0] arguments = sys.argv[1:]</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h2><a id="file-io" >FILE IO</a></h2>
+
+<p><strong >Opens a file and returns a corresponding file object.</strong></p>
+
+<pre  ><code  >&amp;lt;file&amp;gt; = open('&amp;lt;path&amp;gt;', mode='r', encoding=None)</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+<h3>Modes</h3>
+
+<ul>
+<li><strong ><code  >'r'</code> - Read (default).</strong></li>
+<li><strong ><code  >'w'</code> - Write (truncate).</strong></li>
+<li><strong ><code  >'x'</code> - Write or fail if the file already exists.</strong></li>
+<li><strong ><code  >'a'</code> - Append.</strong></li>
+<li><strong ><code  >'w+'</code> - Read and write (truncate).</strong></li>
+<li><strong ><code  >'r+'</code> - Read and write from the start.</strong></li>
+<li><strong ><code  >'a+'</code> - Read and write from the end.</strong></li>
+<li><strong ><code  >'t'</code> - Text mode (default).</strong></li>
+<li><strong ><code  >'b'</code> - Binary mode.</strong></li>
+</ul>
+
+<h3>File</h3>
+
+<pre  ><code  >&amp;lt;file&amp;gt;.seek(0) # Moves to the start of the file.</code></pre><pre  ><code  >&amp;lt;str/bytes&amp;gt; = &amp;lt;file&amp;gt;.readline() # Returns a line. &amp;lt;list&amp;gt; = &amp;lt;file&amp;gt;.readlines() # Returns a list of lines.</code></pre><pre  ><code  >&amp;lt;file&amp;gt;.write(&amp;lt;str/bytes&amp;gt;) # Writes a string or bytes object. &amp;lt;file&amp;gt;.writelines(&amp;lt;list&amp;gt;) # Writes a list of strings or bytes objects.</code></pre><ul>
+<li><strong >Methods do not add or strip trailing newlines.</strong></li>
+</ul>
+
+<h3>Read Text from File</h3>
+
+<pre  ><code  >def read_file(filename): with open(filename, encoding='utf-8') as file: return file.readlines() # or read() for line in read_file(filename): print(line)</code></pre><h3>Write Text to File</h3>
+
+<pre  ><code  >def write_to_file(filename, text): with open(filename, 'w', encoding='utf-8') as file: file.write(text)</code></pre><h3>Append Text to File</h3>
+
+<pre  ><code  >def append_to_file(filename, text): with open(filename, 'a', encoding='utf-8') as file: file.write(text)</code></pre><h2><a id="useful-libraries" >USEFUL LIBRARIES</a></h2>
+
+<h3>CSV</h3>
+
+<pre  ><code  >import csv</code></pre><h4>Read Rows from CSV File</h4>
+
+<pre  ><code  >def read_csv_file(filename): with open(filename, encoding='utf-8') as file: return csv.reader(file, delimiter=';')</code></pre><h4>Write Rows to CSV File</h4>
+
+<pre  ><code  >def write_to_csv_file(filename, rows): with open(filename, 'w', encoding='utf-8') as file: writer = csv.writer(file, delimiter=';') writer.writerows(rows)</code></pre><h3>JSON</h3>
+
+<pre  ><code  >import json &amp;lt;str&amp;gt; = json.dumps(&amp;lt;object&amp;gt;, ensure_ascii=True, indent=None) &amp;lt;object&amp;gt; = json.loads(&amp;lt;str&amp;gt;)</code></pre><h4>Read Object from JSON File</h4>
+
+<pre  ><code  >def read_json_file(filename): with open(filename, encoding='utf-8') as file: return json.load(file)</code></pre><h4>Write Object to JSON File</h4>
+
+<pre  ><code  >def write_to_json_file(filename, an_object): with open(filename, 'w', encoding='utf-8') as file: json.dump(an_object, file, ensure_ascii=False, indent=2)</code></pre><h3>Pickle</h3>
+
+<pre  ><code  >import pickle &amp;lt;bytes&amp;gt; = pickle.dumps(&amp;lt;object&amp;gt;) &amp;lt;object&amp;gt; = pickle.loads(&amp;lt;bytes&amp;gt;)</code></pre><h4>Read Object from File</h4>
+
+<pre  ><code  >def read_pickle_file(filename): with open(filename, 'rb') as file: return pickle.load(file)</code></pre><h4>Write Object to File</h4>
+
+<pre  ><code  >def write_to_pickle_file(filename, an_object): with open(filename, 'wb') as file: pickle.dump(an_object, file)</code></pre><h3>Profile</h3>
+
+<h4>Basic</h4>
+
+<pre  ><code  >from time import time start_time = time() # Seconds since ... duration = time() - start_time</code></pre><h4>Math</h4>
+
+<pre  ><code  >from math import e, pi from math import cos, acos, sin, asin, tan, atan, degrees, radians from math import log, log10, log2 from math import inf, nan, isinf, isnan</code></pre><h4>Statistics</h4>
+
+<pre  ><code  >from statistics import mean, median, variance, pvariance, pstdev</code></pre><h4>Random</h4>
+
+<pre  ><code  >from random import random, randint, choice, shuffle random() # random float between 0 and 1 randint(0, 100) # random integer between 0 and 100 random_el = choice([1,2,3,4]) # select a random element from list shuffle([1,2,3,4]) # shuffles a list</code></pre><h3>Datetime</h3>
+
+<ul>
+<li><strong >Module 'datetime' provides 'date' <code  >&amp;lt;D&amp;gt;</code>, 'time' <code  >&amp;lt;T&amp;gt;</code>, 'datetime' <code  >&amp;lt;DT&amp;gt;</code> and 'timedelta' <code  >&amp;lt;TD&amp;gt;</code> classes. All are immutable and hashable.</strong></li>
+<li><strong >Time and datetime can be 'aware' <code  >&amp;lt;a&amp;gt;</code>, meaning they have defined timezone, or 'naive' <code  >&amp;lt;n&amp;gt;</code>, meaning they don't.</strong></li>
+<li><strong >If object is naive it is presumed to be in system's timezone.</strong></li>
+</ul>
+
+<pre  ><code  >from datetime import date, time, datetime, timedelta from dateutil.tz import UTC, tzlocal, gettz</code></pre><h4>Constructors</h4>
+
+<pre  ><code  >&amp;lt;D&amp;gt; = date(year, month, day) &amp;lt;T&amp;gt; = time(hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0) &amp;lt;DT&amp;gt; = datetime(year, month, day, hour=0, minute=0, second=0, ...) &amp;lt;TD&amp;gt; = timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</code></pre><ul>
+<li><strong >Use <code  >'&amp;lt;D/DT&amp;gt;.weekday()'</code> to get the day of the week (Mon == 0).</strong></li>
+<li><strong ><code  >'fold=1'</code> means second pass in case of time jumping back for one hour.</strong></li>
+</ul>
+
+<h4>Now</h4>
+
+<pre  ><code  >&amp;lt;D/DTn&amp;gt; = D/DT.today() # Current local date or naive datetime. &amp;lt;DTn&amp;gt; = DT.utcnow() # Naive datetime from current UTC time. &amp;lt;DTa&amp;gt; = DT.now(&amp;lt;tz&amp;gt;) # Aware datetime from current tz time.</code></pre><h4>Timezone</h4>
+
+<pre  ><code  >&amp;lt;tz&amp;gt; = UTC # UTC timezone. &amp;lt;tz&amp;gt; = tzlocal() # Local timezone. &amp;lt;tz&amp;gt; = gettz('&amp;lt;Cont.&amp;gt;/&amp;lt;City&amp;gt;') # Timezone from 'Continent/City_Name' str.</code></pre><pre  ><code  >&amp;lt;DTa&amp;gt; = &amp;lt;DT&amp;gt;.astimezone(&amp;lt;tz&amp;gt;) # Datetime, converted to passed timezone. &amp;lt;Ta/DTa&amp;gt; = &amp;lt;T/DT&amp;gt;.replace(tzinfo=&amp;lt;tz&amp;gt;) # Unconverted object with new timezone.</code></pre><h3>Regex</h3>
+
+<pre  ><code  >import re &amp;lt;str&amp;gt; = re.sub(&amp;lt;regex&amp;gt;, new, text, count=0) # Substitutes all occurrences. &amp;lt;list&amp;gt; = re.findall(&amp;lt;regex&amp;gt;, text) # Returns all occurrences. &amp;lt;list&amp;gt; = re.split(&amp;lt;regex&amp;gt;, text, maxsplit=0) # Use brackets in regex to keep the matches. &amp;lt;Match&amp;gt; = re.search(&amp;lt;regex&amp;gt;, text) # Searches for first occurrence of pattern. &amp;lt;Match&amp;gt; = re.match(&amp;lt;regex&amp;gt;, text) # Searches only at the beginning of the text.</code></pre><h4>Match Object</h4>
+
+<pre  ><code  >&amp;lt;str&amp;gt; = &amp;lt;Match&amp;gt;.group() # Whole match. &amp;lt;str&amp;gt; = &amp;lt;Match&amp;gt;.group(1) # Part in first bracket. &amp;lt;tuple&amp;gt; = &amp;lt;Match&amp;gt;.groups() # All bracketed parts. &amp;lt;int&amp;gt; = &amp;lt;Match&amp;gt;.start() # Start index of a match. &amp;lt;int&amp;gt; = &amp;lt;Match&amp;gt;.end() # Exclusive end index of a match.</code></pre><h4>Special Sequences</h4>
+
+<p><strong >Expressions below hold true for strings that contain only ASCII characters. Use capital letters for negation.</strong></p>
+
+<pre  ><code  >'\d' == '[0-9]' # Digit '\s' == '[ \t\n\r\f\v]' # Whitespace '\w' == '[a-zA-Z0-9_]' # Alphanumeric</code></pre><p><a href="#contents" >Back To Top</a></p>
+
+</body>
+</html>
