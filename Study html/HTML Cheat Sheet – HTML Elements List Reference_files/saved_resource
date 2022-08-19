@@ -1,0 +1,38 @@
+
+var ftGUID_4171447="51660FE1D690F8";
+var ftConfID_4171447="0";
+var ftParams_4171447="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=www.freecodecamp.org&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.freecodecamp.org%2Fnews%2Fhtml-cheat-sheet-html-elements-list-reference%2F&ft_section=__20590437140705625483077464422820930676&cachebuster=861174.8051904322";
+var ftKeyword_4171447="";
+var ftCustom_4171447="";
+var ftSection_4171447="__20590437140705625483077464422820930676";
+var ftSegment_4171447="aih9,aiff,ahp3,aig5,adha,aiop,aixo,aixc,ai9l,ad6c,u6h,ajh4,afr5";
+var ftSegmentList_4171447=[{s:'aih9'},{s:'aiff'},{s:'ahp3'},{s:'aig5'},{s:'adha'},{s:'aiop'},{s:'aixo',t:53330432},{s:'aixc'},{s:'ai9l'},{s:'ad6c',t:53110000},{s:'u6h',t:53110000},{s:'ajh4'},{s:'afr5'}];
+var ftRuleMatch_4171447="0";
+var ftTimestamp_4171447="1660015680";
+var ftGeoC2_4171447="us";
+var ftGeoState_4171447="wi";
+var ftGeoCity_4171447="west bend";
+var ftISP_4171447="charter communications";
+var ftSpeed_4171447="cable";
+var ftDMA_4171447="617";
+var ftLong_4171447="-88.17";
+var ftLat_4171447="43.39";
+var ftPostal_4171447="53095";
+var ftTimeZone_4171447="-500";
+var ftMobileCarrier_4171447="";
+var ftImp4171447 = {};
+ftImp4171447.privacy = "x";
+ftImp4171447.guidAge = "168";
+ftImp4171447.impID = "FC9335F2-04F6-DD1E-240E-C8C7EA4E4650";
+ftImp4171447.duid = "FT:51660FE1D690F8";
+
+ftImp4171447.ft_tpplid = "";
+ftImp4171447.ft_c = {};
+ftImp4171447.gdpr = "";
+ftImp4171447.gdpr_consent = "";
+ftImp4171447.gdpr_pd = "";
+ftImp4171447.oob_consent = "";
+ftImp4171447.gdprStoredConsent = "";
+ftImp4171447.us_privacy = "";
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/417/4171447/3972204/js/j-4171447-3972204.js" id="ftscript_m4171447" name="ftscript_m4171447"></scr'+'ipt>');

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study list</title>
+</head>
+<body>
+<<p>In this tutorial, we will go over commonly used HTML tags, elements, and attributes. We'll also see examples of how these tags, elements, and attributes work.</p><p>You can use this article as a reference guide whether you're a beginner or experienced developer.</p><h2 id="what-makes-up-an-html-document">What Makes Up an HTML Document?</h2><p>The following tags define the basic HTML document structure:</p><ul><li><code>&lt;html&gt;</code> tag – This tag acts as a container for every other element in the document except the <code>&lt;!DOCTYPE <em>html</em>&gt;</code> tag. </li><li><code>&lt;head&gt;</code> tag– Includes all the document's metadata. </li><li><code>&lt;title&gt;</code> tag – Defines the title of the document which is displayed in the browser's title bar.</li><li><code>&lt;body&gt;</code> tag – Acts as a container for the document's content that gets displayed on the browser.</li></ul><p>Here's what all that looks like:</p><pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt; My HTML Cheat Sheet &lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><code>&lt;!DOCTYPE <em>html</em>&gt;</code> specifies that we are working with an HTML5 document.</p><p>The following tags give additional information to the HTML document:</p><ul><li><code>&lt;meta&gt;</code> tag – This tag can be used to define additional information about the webpage.</li><li><code>&lt;link&gt;</code> tag – Used to link the document to an external resource.</li><li><code>&lt;style&gt;</code> tag – Used for defining styles for the document. </li><li><code>&lt;script&gt;</code> tag – Used to write code snippets (usually JavaScript) or to link the document to an external script.</li></ul><pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link rel="stylesheet" href="style.css" /&gt;
+    &lt;title&gt;My HTML Cheat Sheet&lt;/title&gt;
+
+    &lt;style&gt;
+      * {
+        font-size: 100px;
+      }
+    &lt;/style&gt;
+
+    &lt;script&gt;
+      alert('This is an alert');
+    &lt;/script&gt;
+ &lt;/head&gt;</code></pre><h2 id="html-document-structure">HTML Document Structure</h2><p>When you're fleshing out your HTML document, you'll use certain tags to create the structure.</p><p>The <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> tags show different levels of headings in a document, with &lt;h1&gt; being the largest and &lt;h6&gt; being the smallest.</p><pre><code class="language-html">&lt;h1&gt; Heading 1 &lt;/h1&gt;
+&lt;h2&gt; Heading 2 &lt;/h2&gt;
+&lt;h3&gt; Heading 3 &lt;/h3&gt;
+&lt;h4&gt; Heading 4 &lt;/h4&gt;
+&lt;h5&gt; Heading 5 &lt;/h5&gt;
+&lt;h6&gt; Heading 6 &lt;/h6&gt;</code></pre><p>You use the <code>&lt;p&gt;</code> tag to create a paragraph.</p><pre><code class="language-html">&lt;p&gt; This is a paragraph &lt;/p&gt;</code></pre><p>The <code>&lt;div&gt;</code> tag can be used to divide and style separate sections of the document. It also acts as a parent container for other elements. Here's how it works:</p><pre><code class="language-html">&lt;div class="newsSection"&gt;
+  &lt;h1&gt; This is the news section &lt;/h1&gt;
+  &lt;p&gt; Welcome to the news section! &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="contactSection"&gt;
+  &lt;h1&gt; This is the contact us section &lt;/h1&gt;
+  &lt;p&gt; Hello world! &lt;/p&gt;
+&lt;/div&gt;</code></pre><p>We also have the <code>&lt;span&gt;</code> tag. This is similar to <code>&lt;div&gt;</code> but you use it as an inline container. </p><pre><code class="language-html">&lt;p&gt; I love &lt;span class="keyword"&gt; coding! &lt;/span&gt;&lt;/p&gt;</code></pre><p>There's the <code>&lt;br/&gt;</code> tag, which we use for creating line breaks. This has no closing tag.</p><pre><code class="language-html">&lt;p&gt; I love &lt;br/&gt; freeCodeCamp &lt;/p&gt;</code></pre><p>The <code>&lt;hr/&gt;</code> tag is used to create a horizontal line. It also has no closing tag.</p><h2 id="images-in-html">Images in HTML</h2><p>In HTML, we use the <code>&lt;img/&gt;</code> tag to display images. </p><p>Here are some attributes of the <code>&lt;img/&gt;</code> tag:</p><ul><li><code>src</code> is used to specify the path to the location of the image on your computer or the web.</li><li><code>alt</code> defines an alternate text that displays if the image cannot be rendered. The alt text is also good for screen readers.</li><li><code>height</code> specifies the height of the image.</li><li><code>width</code> specifies the width of the image.</li><li><code>border</code> specifies the thickness of the borders, which is set to 0 if no border is added.</li></ul><pre><code class="language-html">&lt;img src="ihechikara.png" alt="a picture of Ihechikara" width="300" height="300"&gt;</code></pre><h2 id="text-formatting-in-html">Text Formatting in HTML</h2><p>We have many ways to format text in HTML. Let's go over them now briefly.</p><ul><li><code>&lt;i&gt;</code> displays text in italics.</li><li><code>&lt;b&gt;</code> displays text in bold. </li><li><code>&lt;strong&gt;</code> displays text in bold. Used to make important emphasis.</li><li><code>&lt;em&gt;</code> another emphasis tag that displays text in italics.</li><li><code>&lt;sub&gt;</code> defines subscript text, like the two atoms of oxygen in CO₂.</li><li><code>&lt;sup&gt;</code> defines a superscript like the power of a number, 10².</li><li><code>&lt;small&gt;</code> reduces the size of text.</li><li><code>&lt;del&gt;</code> defines deleted text by striking a line through the text.</li><li><code>&lt;ins&gt;</code> defines inserted text which is usually underlined. </li><li><code>&lt;blockquote&gt;</code> is used to enclose a section of text quoted from another source.</li><li><code>&lt;q&gt;</code> is used for shorter inline quotes.</li><li><code>&lt;cite&gt;</code> is used for citing the author of a quote.</li><li><code>&lt;address&gt;</code> is used for showing the author's contact information.</li><li><code>&lt;abbr&gt;</code> denotes an abbreviation.</li><li><code>&lt;code&gt;</code> displays code snippets.</li><li><code>&lt;mark&gt;</code> highlights text.</li></ul><pre><code class="language-html">&lt;p&gt;&lt;i&gt; italic text &lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;bold text &lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; strong text &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt; strong text &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sub&gt; subscripted text &lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt; superscripted text &lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt; small text &lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt; deleted text &lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt; inserted text &lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;&lt;blockquote&gt; quoted text &lt;/blockquote&gt;&lt;/p&gt;
+&lt;p&gt;&lt;q&gt; short quoted text &lt;/q&gt;&lt;/p&gt;
+&lt;p&gt;&lt;cite&gt; cited text &lt;/cite&gt;&lt;/p&gt;
+&lt;p&gt;&lt;address&gt; address &lt;/address&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr&gt; inserted text &lt;/abbr&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; code snippet &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt; marked text &lt;/mark&gt;&lt;/p&gt;</code></pre><h2 id="links">Links</h2><p>The <code>&lt;a&gt;</code> tag, also known as the anchor tag, is used to define hyperlinks that link to other pages (external web pages included) or to a section of the same page.</p><p>Here are some attributes of the <code>&lt;a&gt;</code> tag:</p><ul><li><code>href</code> specifies the URL the link takes the user to when clicked.</li><li><code>download</code> specifies that the target or resource clicked is downloadable.</li><li><code>target</code> specifies where the link is to be opened. This could be in the same or separate window.</li></ul><pre><code class="language-html">&lt;a href="https://www.freecodecamp.org/" target="_blank"&gt; Learn to code &lt;/a&gt;</code></pre><h2 id="lists">Lists</h2><p>The <code>&lt;ol&gt;</code> tag defines an ordered list while the <code>&lt;ul&gt;</code> tag defines an unordered list.</p><p>The <code>&lt;li&gt;</code> tag is used to create items in the list.</p><pre><code class="language-html">&lt;!-- Unordered list --&gt;
+&lt;ul&gt;
+  &lt;li&gt; HTML &lt;/li&gt;
+  &lt;li&gt; CSS &lt;/li&gt;
+  &lt;li&gt; JavaScrip t&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list --&gt;
+&lt;ol&gt;
+  &lt;li&gt; HTML &lt;/li&gt;
+  &lt;li&gt; CSS &lt;/li&gt;
+  &lt;li&gt; JavaScript &lt;/li&gt;
+&lt;/ol&gt;</code></pre><h2 id="forms">Forms</h2><p>The <code>&lt;form&gt;</code> tag is used to create a form in HTML. Forms are used to get user inputs. Here are some attributes associated with the <code>&lt;form&gt;</code> element:</p><ul><li><code>action</code> specifies where the form information goes when submitted.</li><li><code>target</code> specifies where to display the form's response.</li><li><code>autocomplete</code> can have a value of on or off. </li><li><code>novalidate</code> specifies that the form should not be validated.</li><li><code>method</code> specifies the HTTP method used when sending form data.</li><li><code>name</code> &nbsp;specifies the name of the form.</li><li><code>required</code> specifies that an input element cannot be left empty.</li><li><code>autofocus</code> gives focus to the input elements when the page loads.</li><li><code>disabled</code> disables an input element so the user can longer interact with it.</li><li><code>placeholder</code> is used to give users a hint on what information is required for an input element.</li></ul><p>Here are other input elements associated with forms:</p><ul><li><code>&lt;textarea&gt;</code> for getting user text input with multiple lines.</li><li><code>&lt;select&gt;</code> specifies a list of options the user can choose from.</li><li><code>&lt;option&gt;</code> creates an option under the select element.</li><li><code>&lt;input&gt;</code> specifies an input field where the user can enter data. This has a <code>type</code> attribute that specifies what type of data the user can input.</li><li><code>&lt;button&gt;</code> creates a button.</li></ul><pre><code class="language-html">&lt;form action="/info_url/" method="post"&gt;
+
+    &lt;label for="firstName"&gt; First name: &lt;/label&gt;
+    &lt;input type="text" 
+           name="firstName" 
+           placeholder="first name" 
+           required
+    &gt;
+    
+    &lt;label for="lastName"&gt; Last name: &lt;/label&gt;
+    &lt;input type="text" 
+           name="lastName" 
+           placeholder="last name" 
+           required
+    &gt;
+
+    &lt;label for="bio"&gt; Bio: &lt;/label&gt;
+    &lt;textarea name="bio"&gt;&lt;/textarea&gt;
+
+    &lt;select id="age"&gt;
+      &lt;option value="15-18"&gt;15-18&lt;/option&gt;
+      &lt;option value="19-25"&gt;19-25&lt;/option&gt;
+      &lt;option value="26-30"&gt;26-30&lt;/option&gt;
+      &lt;option value="31-36"&gt;31-36&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+    
+  &lt;/form&gt;</code></pre><h2 id="tables">Tables</h2><ul><li>The <code>&lt;table&gt;</code> tag defines a HTML table.</li><li><code>&lt;thead&gt;</code> specifies information for each column in a table.</li><li><code>&lt;tbody&gt;</code> specifies the body or content of the table.</li><li><code>&lt;tfoot&gt;</code> specifies the footer information of the table.</li><li><code>&lt;tr&gt;</code> denotes a row in the table.</li><li><code>&lt;td&gt;</code> denotes a single cell in the table.</li><li><code>&lt;th&gt;</code> denotes the value column's heading.</li></ul><pre><code class="language-html">&lt;table&gt;
+    
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; Course &lt;/th&gt;
+      &lt;th&gt; Progress &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+    
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; HTML &lt;/td&gt;
+      &lt;td&gt; 90% &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; CSS &lt;/td&gt;
+      &lt;td&gt; 80% &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+    
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt; JavaScript &lt;/td&gt;
+      &lt;td&gt; 95% &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+    
+&lt;/table&gt;</code></pre><h2 id="tags-introduced-in-html5">Tags introduced in HTML5</h2><p>Here are some tags introduced in HTML5:</p><ul><li><code>&lt;header&gt;</code> specifies the webpage header</li><li><code>&lt;footer&gt;</code> specifies the webpage footer. </li><li><code>&lt;main&gt;</code> specifies a main content section.</li><li><code>&lt;article&gt;</code> specifies an article's section, usually for content that can stand alone on the webpage.</li><li><code>&lt;section&gt;</code> is used to create separate sections.</li><li><code>&lt;aside&gt;</code> is usually used to when placing items in a sidebar.</li><li><code>&lt;time&gt;</code> is used for formatting date and time.</li><li><code>&lt;figure&gt;</code> is used for figures like charts.</li><li><code>&lt;figcaption&gt;</code> denotes a description of a figure.</li><li><code>&lt;nav&gt;</code> is used to nest navigation links.</li><li><code>&lt;meter&gt;</code> is used to measure data within a range.</li><li><code>&lt;progress&gt;</code> is used as a progress bar.</li><li><code>&lt;dialog&gt;</code> is used to create a dialog box.</li><li><code>&lt;audio&gt;</code> is used to embed an audio file in the web page.</li><li><code>&lt;video&gt;</code> is used to embed video.</li></ul><pre><code class="language-html">  &lt;header&gt;
+    &lt;h1&gt; Welcome &lt;/h1&gt;
+    &lt;h3&gt; Hello World! &lt;/h3&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About us&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;article&gt;
+      
+    &lt;h1&gt; An article about us &lt;/h1&gt; 
+    &lt;p&gt; Article content &lt;/p&gt;
+
+    &lt;aside&gt;
+      &lt;p&gt; It's sunny today &lt;/p&gt;
+    &lt;/aside&gt;
+      
+  &lt;/article&gt;
+
+  Progress: &lt;progress min="0" max="100" value="50"&gt; &lt;/progress&gt;
+
+  &lt;footer&gt; Copyright 2022-2099. All Rights Reserved. &lt;/footer&gt;</code></pre><h2 id="conclusion">Conclusion</h2><p>In this article, we have seen a lot of HTML tags, elements, and attributes commonly used by developers. This is not all there is, but should serve as a good reference resource.</p><p>I hope you found this helpful. Thank you for reading.</p>
+
+</ul>
+</body>
+</html>
