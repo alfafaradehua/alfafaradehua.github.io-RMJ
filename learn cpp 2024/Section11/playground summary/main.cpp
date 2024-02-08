@@ -14,18 +14,11 @@ using std::cin;
 using std::endl;
 using std::vector;
 using std::string;
+// function prototypes
+int add_two_numbers (int a,int b);
 
-int add_two_numbers (int a,int b)
-{
-    int sum(0);
-    sum = a + b;
-    return sum;
-}
+void hello_world();
 
-void hello_world()
-{
-    cout << "Hello world!" << endl;
-}
 
 int main()
 {
@@ -51,11 +44,22 @@ int main()
     cin >> power;
     cout << num << " raised to the " << power << " power is: " << pow(num, power) << endl;
     
-
     cout <<  endl;
     hello_world();
     hello_world();
     hello_world();
+    cout << "after installing platformIO";
     return 0;
 }
 
+int add_two_numbers (int a,int b)
+{
+    int sum(0);
+    sum = a + b;
+    return sum;
+}
+
+void hello_world()
+{
+    cout << "Hello world! after installing platformIO" << endl;
+}
