@@ -1,14 +1,16 @@
 // Section 13
 // Implementing member methods 2
 #include <iostream>
-#include "Account.h"
+#include "Account.cpp"
 
 using namespace std;
 
 int main() {
     Account frank_account;
-    frank_account.set_name("Frank's account");
+    
     frank_account.set_balance(1000.0);
+    frank_account.set_name("Frank's account");
+    /*
     
     if (frank_account.deposit(200.0))
         cout << "Deposit OK" << endl;
@@ -24,7 +26,7 @@ int main() {
         cout << "Withdraw OK" << endl;
     else
         cout << "Not sufficient funds" << endl; 
-    
+    */
     return 0;
 }
 
